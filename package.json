@@ -1,0 +1,50 @@
+{
+  "name": "tivacu",
+  "version": "1.0.0",
+  "description": "Tarjeta de Información de Vacucacion",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env DEBUG=express:*,app:* nodemon index",
+    "debug": "cross-env DEBUG=express:*,app:* npm run start",
+    "start": "cross-env NODE_ENV=production node index",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garestrepop/tivacu.git"
+  },
+  "keywords": [
+    "Vacuna",
+    "Vacunacion",
+    "Vacine"
+  ],
+  "author": "garp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garestrepop/tivacu/issues"
+  },
+  "homepage": "https://github.com/garestrepop/tivacu#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/joi": "^17.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-jwt-authz": "^2.4.1",
+    "jwks-rsa": "^2.0.3",
+    "mongoose": "^5.13.0",
+    "mongoose-autopopulate": "^0.14.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
