@@ -64,9 +64,9 @@ const PersonSchema = new Schema(
       type: String,
     },
 
-    contact_information: ContactInformationSchema,
+    _contact_information: ContactInformationSchema,
 
-    assitance_information: AssitanceInformationSchema,
+    _assitance_information: AssitanceInformationSchema,
 
     _vaccines: [
       {

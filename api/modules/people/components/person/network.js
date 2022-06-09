@@ -109,8 +109,32 @@ async function listVaccinesOfPersonByAtcGroupCode(req, res, next) {
   }
 }
 
+async function listContactInformation(req, res, next) {
+  const { id } = req.params;
+
+  try {
+    const documentRetrieved = await personController.listContactInformation(id);
+    response.success(req, res, 'Contact Information retrieved', 200, documentRetrieved);
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function listAssitanceInformation(req, res, next) {
+  const { id } = req.params;
+
+  try {
+    const documentRetrieved = await personController.listAssitanceInformation(id);
+    response.success(req, res, 'Assitance Information retrieved', 200, documentRetrieved);
+  } catch (err) {
+    next(err);
+  }
+}
+
 router.get('/', listPeople);
 router.get('/:id', findPersonById);
+router.get('/contactInformation/:id', listContactInformation);
+router.get('/assitanceInformation/:id', listAssitanceInformation);
 router.get('/vaccines/:id', listVaccinesOfPersonById);
 router.get('/vaccines/atccode/:id', listVaccinesOfPersonByAtcCode);
 router.get('/vaccines/atcvaccinecode/:id', listVaccinesOfPersonByAtcVaccineCode);

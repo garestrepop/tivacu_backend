@@ -1,3 +1,4 @@
+const { trusted } = require('mongoose');
 const Store = require('../../../../../lib/mongooseStore');
 const person = require('../../models/person');
 
@@ -51,6 +52,22 @@ class Controller {
   async listVaccinesOfPersonByAtcGroupCode(id, atcGroupCode) {
     const documentRetrived = await db.populate(this.Person, { _id: id }, { path: '_vaccines', populate: { path: '_antigen', match: { atc_group_code: atcGroupCode } } });
     return documentRetrived;
+  }
+
+  async listContactInformation(id) {
+    const select = {
+      type_document: 1, id_document_number: 1, firstname: 1, lastname: 1, _contact_information: 1,
+    };
+    const document = await db.findSelectById(this.Person, id, select);
+    return document || {};
+  }
+
+  async listAssitanceInformation(id) {
+    const select = {
+      type_document: 1, id_document_number: 1, firstname: 1, lastname: 1, _assitance_information: 1,
+    };
+    const document = await db.findSelectById(this.Person, id, select);
+    return document || {};
   }
 }
 
