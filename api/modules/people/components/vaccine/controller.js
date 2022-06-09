@@ -38,12 +38,11 @@ class Controller {
     return documentDeleted;
   }
 
-  /* -- Por regla de negocio siempre se debe insertar una nueva vacuna,  entrada por el metodo Create.
-  async addVaccineToPerson (id, idPerson) {
-    const documentAdd = await db.update(this.Person, idPerson, { _vaccines: id })
-    return documentAdd
+  // Por regla de negocio siempre se debe insertar una nueva vacuna,  entrada por el metodo Create.
+  async addVaccineToPerson(id, idPerson) {
+    const documentAdd = await db.update(this.Person, idPerson, { _vaccines: id });
+    return documentAdd;
   }
-  */
 }
 
 module.exports = Controller;
