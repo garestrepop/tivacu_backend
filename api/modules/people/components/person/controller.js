@@ -1,3 +1,4 @@
+const assert = require('assert');
 const { trusted } = require('mongoose');
 const Store = require('../../../../../lib/mongooseStore');
 const person = require('../../models/person');

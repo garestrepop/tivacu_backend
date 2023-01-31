@@ -46,7 +46,10 @@ const AssitanceInformationSchema = new Schema(
 
     diseases: [String],
 
-    share: Boolean,
+    share: {
+      type: String,
+      isIn: ['All', 'Just Me', 'Contact 1 Information', 'Contact 2 Information', 'Public Healt Insurance', 'Private Healt Insurance', 'Life Insurance', 'Medications You Take', 'Allergic Reactions', 'Diseases'],
+    },
 
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'update_at' } },

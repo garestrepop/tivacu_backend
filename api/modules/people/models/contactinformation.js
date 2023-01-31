@@ -23,7 +23,10 @@ const ContactInformationSchema = new Schema(
 
     movil_phone: String,
 
-    share: Boolean,
+    share: {
+      type: String,
+      isIn: ['All', 'Just Me', 'Residential Information', 'Office Information', 'Movile phone'],
+    },
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'update_at' } },
 );

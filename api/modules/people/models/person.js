@@ -75,6 +75,11 @@ const PersonSchema = new Schema(
       },
     ],
 
+    share: {
+      type: String,
+      isIn: ['All', 'Just Me', 'identification information'],
+    },
+
   },
   { collection: 'persons', timestamps: { createdAt: 'created_at', updatedAt: 'update_at' } },
 );
