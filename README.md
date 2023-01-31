@@ -14,6 +14,8 @@ Backend.
   Javascript + Express.
   Se implemento una librería genérica con el ORM Mongoose que se utiliza para el manejo de todas las operaciones con la base de datos
   usando ORM Mongoose.
+  Genera una API REST,  
+  Autenticación OAUT2.0
 
 Base de datos.
   MongoDB.
